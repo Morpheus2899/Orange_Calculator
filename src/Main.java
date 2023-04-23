@@ -3,5 +3,6 @@ public class Main {
         GUI w = new GUI();
         w.setVisible(true);
         w.result.setText("42");
+        System.out.println();
     }
 }

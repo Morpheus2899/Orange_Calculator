@@ -12,7 +12,7 @@ public class GUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setContentPane(panel1);
         panel1.setBackground(new Color(255,165,0));
-        panel2.setBackground(new Color(220,220,220));
+        panel2.setBackground(Color.WHITE);
         panel2.setSize(202,200);
         ActionListener cb = new ActionListener() {
             @Override
@@ -23,10 +23,13 @@ public class GUI extends JFrame {
                         panel1.setBackground(new Color(255,165,0));
                         break;
                     case "Light theme":
-                        panel1.setBackground(Color.WHITE);
+                        panel1.setBackground(new Color(220,220,220));
                         break;
                     case "Dark theme":
                         panel1.setBackground(Color.DARK_GRAY);
+                        break;
+                    default:
+                        throw new IllegalStateException("Unexpected value: " + s);
                 }
             }
         };

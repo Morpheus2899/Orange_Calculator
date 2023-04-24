@@ -241,7 +241,7 @@
           </grid>
         </constraints>
         <properties/>
-        <border type="none"/>
+        <border type="bevel-lowered"/>
         <children>
           <component id="d4bbb" class="javax.swing.JLabel" binding="result">
             <constraints>

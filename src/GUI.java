@@ -39,5 +39,4 @@ public class GUI extends JFrame {
     public JLabel result;
     public JComboBox comboBox1;
     public JPanel panel2;
-
 }

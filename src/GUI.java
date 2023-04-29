@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class GUI extends JFrame {
     private JPanel panel1;
@@ -20,6 +22,12 @@ public class GUI extends JFrame {
     private JButton button9;
     private JButton button0;
     private JButton buttonC;
+    private JButton buttonPlus;
+    private JButton buttonMinus;
+    private JButton buttonTimes;
+    private JButton buttonDiv;
+    private JButton buttonEnter;
+    private JLabel labelResult;
 
     public GUI() {
         super();
@@ -31,6 +39,23 @@ public class GUI extends JFrame {
         panel1.setBackground(new Color(255,165,0));
         panel2.setBackground(Color.WHITE);
         panel2.setSize(202,200);
+        textField.addKeyListener(new KeyAdapter() {
+            public void keyTyped(KeyEvent e) {
+                char c = e.getKeyChar();
+                if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE) && (c != '+') &&
+                        (c != '-') && (c != 'x') && (c != '/')) {
+                    e.consume();  // ignore event
+                }
+                if (c == '+' || c == '-' || c == 'x' || c == '/') {
+                    buttonPlus.setEnabled(false);
+                    buttonMinus.setEnabled(false);
+                    buttonTimes.setEnabled(false);
+                    buttonDiv.setEnabled(false);
+                }
+                if (c == '\n') buttonEnter.doClick();
+
+            }
+        });
 
         comboBox1.addActionListener(new ActionListener() {
             @Override
@@ -39,17 +64,20 @@ public class GUI extends JFrame {
                 switch (s) {
                     case "Orange theme":
                         panel1.setBackground(new Color(255,165,0));
+                        labelResult.setForeground(Color.BLACK);
                         break;
                     case "Light theme":
                         panel1.setBackground(new Color(220,220,220));
+                        labelResult.setForeground(Color.BLACK);
                         break;
                     case "Dark theme":
                         panel1.setBackground(Color.DARK_GRAY);
+                        labelResult.setForeground(Color.WHITE);
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + s);
                 }
-            };
+            }
         });
 
         button1.addActionListener(new ActionListener() {
@@ -142,10 +170,102 @@ public class GUI extends JFrame {
             }
         });
 
+        buttonPlus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text = textField.getText();
+                text += "+";
+                textField.setText(text);
+                buttonPlus.setEnabled(false);
+                buttonMinus.setEnabled(false);
+                buttonTimes.setEnabled(false);
+                buttonDiv.setEnabled(false);
+            }
+        });
+
+        buttonMinus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text = textField.getText();
+                text += "-";
+                textField.setText(text);
+                buttonPlus.setEnabled(false);
+                buttonMinus.setEnabled(false);
+                buttonTimes.setEnabled(false);
+                buttonDiv.setEnabled(false);
+            }
+        });
+
+        buttonTimes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text = textField.getText();
+                text += "x";
+                textField.setText(text);
+                buttonPlus.setEnabled(false);
+                buttonMinus.setEnabled(false);
+                buttonTimes.setEnabled(false);
+                buttonDiv.setEnabled(false);
+            }
+        });
+
+        buttonDiv.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text = textField.getText();
+                text += "/";
+                textField.setText(text);
+                buttonPlus.setEnabled(false);
+                buttonMinus.setEnabled(false);
+                buttonTimes.setEnabled(false);
+                buttonDiv.setEnabled(false);
+            }
+        });
+
         buttonC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 textField.setText("");
+                buttonPlus.setEnabled(true);
+                buttonMinus.setEnabled(true);
+                buttonTimes.setEnabled(true);
+                buttonDiv.setEnabled(true);
+            }
+        });
+
+        buttonEnter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String expression = textField.getText();
+                int num1 = 0;
+                int num2 = 0;
+                char op = ' ';
+                String r;
+                for (int i = 0; i < expression.length(); i++) {
+                    if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == 'x' ||
+                            expression.charAt(i) == '/') {
+                        op = expression.charAt(i);
+                        num1 = Integer.parseInt(expression.substring(0,i));
+                        num2 = Integer.parseInt(expression.substring(i+1));
+                    }
+                }
+                switch (op) {
+                    case '+':
+                        r = Integer.toString(num1 + num2);
+                        break;
+                    case '-':
+                        r = Integer.toString(num1 - num2);
+                        break;
+                    case 'x':
+                        r = Integer.toString(num1 * num2);
+                        break;
+                    case '/':
+                        r = Double.toString((double) num1 / num2);
+                        break;
+                    default:
+                        r = "ERROR";
+                }
+                result.setText(r);
             }
         });
 

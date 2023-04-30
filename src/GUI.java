@@ -271,7 +271,8 @@ public class GUI extends JFrame {
                     result.setText(r);
                 } catch (Exception e) {
                     errorPane = new JFrame();
-                    JOptionPane.showMessageDialog(errorPane, "You can only do binary operations", "ERROR", JOptionPane.WARNING_MESSAGE);
+                    JOptionPane.showMessageDialog(errorPane, "You can only do binary operations (for now)",
+                            "ERROR", JOptionPane.WARNING_MESSAGE);
                 }
             }
         });

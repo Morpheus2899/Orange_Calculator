@@ -28,6 +28,7 @@ public class GUI extends JFrame {
     private JButton buttonDiv;
     private JButton buttonEnter;
     private JLabel labelResult;
+    JFrame errorPane;
 
     public GUI() {
         super();
@@ -236,36 +237,41 @@ public class GUI extends JFrame {
         buttonEnter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                String expression = textField.getText();
-                int num1 = 0;
-                int num2 = 0;
-                char op = ' ';
-                String r;
-                for (int i = 0; i < expression.length(); i++) {
-                    if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == 'x' ||
-                            expression.charAt(i) == '/') {
-                        op = expression.charAt(i);
-                        num1 = Integer.parseInt(expression.substring(0,i));
-                        num2 = Integer.parseInt(expression.substring(i+1));
+                try {
+                    String expression = textField.getText();
+                    int num1 = 0;
+                    int num2 = 0;
+                    char op = ' ';
+                    String r;
+                    for (int i = 0; i < expression.length(); i++) {
+                        if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == 'x' ||
+                                expression.charAt(i) == '/') {
+                            op = expression.charAt(i);
+                            num1 = Integer.parseInt(expression.substring(0,i));
+                            num2 = Integer.parseInt(expression.substring(i+1));
+                        }
                     }
+                    switch (op) {
+                        case '+':
+                            r = Integer.toString(num1 + num2);
+                            break;
+                        case '-':
+                            r = Integer.toString(num1 - num2);
+                            break;
+                        case 'x':
+                            r = Integer.toString(num1 * num2);
+                            break;
+                        case '/':
+                            r = Double.toString((double) num1 / num2);
+                            break;
+                        default:
+                            r = "ERROR";
+                    }
+                    result.setText(r);
+                } catch (Exception e) {
+                    errorPane = new JFrame();
+                    JOptionPane.showMessageDialog(errorPane, "You can only do binary operations", "ERROR", JOptionPane.WARNING_MESSAGE);
                 }
-                switch (op) {
-                    case '+':
-                        r = Integer.toString(num1 + num2);
-                        break;
-                    case '-':
-                        r = Integer.toString(num1 - num2);
-                        break;
-                    case 'x':
-                        r = Integer.toString(num1 * num2);
-                        break;
-                    case '/':
-                        r = Double.toString((double) num1 / num2);
-                        break;
-                    default:
-                        r = "ERROR";
-                }
-                result.setText(r);
             }
         });
 

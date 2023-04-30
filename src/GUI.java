@@ -262,7 +262,8 @@ public class GUI extends JFrame {
                             r = Integer.toString(num1 * num2);
                             break;
                         case '/':
-                            r = Double.toString((double) num1 / num2);
+                            if (num2 == 0) r = "MATH ERROR";
+                            else r = Double.toString((double) num1 / num2);
                             break;
                         default:
                             r = "ERROR";

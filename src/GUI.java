@@ -28,6 +28,7 @@ public class GUI extends JFrame {
     private JButton buttonDiv;
     private JButton buttonEnter;
     private JLabel labelResult;
+    private JButton buttonPoint;
     JFrame errorPane;
 
     public GUI() {
@@ -44,7 +45,7 @@ public class GUI extends JFrame {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();
                 if ( ((c < '0') || (c > '9')) && (c != KeyEvent.VK_BACK_SPACE) && (c != '+') &&
-                        (c != '-') && (c != 'x') && (c != '/')) {
+                        (c != '-') && (c != 'x') && (c != '/') && (c != '.')) {
                     e.consume();  // ignore event
                 }
                 if (c == '+' || c == '-' || c == 'x' || c == '/') {
@@ -171,6 +172,15 @@ public class GUI extends JFrame {
             }
         });
 
+        buttonPoint.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                String text = textField.getText();
+                text += ".";
+                textField.setText(text);
+            }
+        });
+
         buttonPlus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -239,27 +249,27 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     String expression = textField.getText();
-                    int num1 = 0;
-                    int num2 = 0;
+                    double num1 = 0;
+                    double num2 = 0;
                     char op = ' ';
                     String r;
                     for (int i = 0; i < expression.length(); i++) {
                         if (expression.charAt(i) == '+' || expression.charAt(i) == '-' || expression.charAt(i) == 'x' ||
                                 expression.charAt(i) == '/') {
                             op = expression.charAt(i);
-                            num1 = Integer.parseInt(expression.substring(0,i));
-                            num2 = Integer.parseInt(expression.substring(i+1));
+                            num1 = Double.parseDouble(expression.substring(0,i));
+                            num2 = Double.parseDouble(expression.substring(i+1));
                         }
                     }
                     switch (op) {
                         case '+':
-                            r = Integer.toString(num1 + num2);
+                            r = Double.toString(num1 + num2);
                             break;
                         case '-':
-                            r = Integer.toString(num1 - num2);
+                            r = Double.toString(num1 - num2);
                             break;
                         case 'x':
-                            r = Integer.toString(num1 * num2);
+                            r = Double.toString(num1 * num2);
                             break;
                         case '/':
                             if (num2 == 0) r = "MATH ERROR";

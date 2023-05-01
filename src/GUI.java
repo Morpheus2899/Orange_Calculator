@@ -33,7 +33,7 @@ public class GUI extends JFrame {
 
     public GUI() {
         super();
-        setSize(900, 600);
+        setSize(850, 550);
         setTitle("ORANGE CALCULATOR v0.1");
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -67,14 +67,74 @@ public class GUI extends JFrame {
                     case "Orange theme":
                         panel1.setBackground(new Color(255,165,0));
                         labelResult.setForeground(Color.BLACK);
+                        button1.setBackground(new Color(105, 107, 110));
+                        button2.setBackground(new Color(105, 107, 110));
+                        button3.setBackground(new Color(105, 107, 110));
+                        button4.setBackground(new Color(105, 107, 110));
+                        button5.setBackground(new Color(105, 107, 110));
+                        button6.setBackground(new Color(105, 107, 110));
+                        button7.setBackground(new Color(105, 107, 110));
+                        button8.setBackground(new Color(105, 107, 110));
+                        button9.setBackground(new Color(105, 107, 110));
+                        button0.setBackground(new Color(105, 107, 110));
+                        button1.setForeground(new Color(255, 255, 255));
+                        button2.setForeground(new Color(255, 255, 255));
+                        button3.setForeground(new Color(255, 255, 255));
+                        button4.setForeground(new Color(255, 255, 255));
+                        button5.setForeground(new Color(255, 255, 255));
+                        button6.setForeground(new Color(255, 255, 255));
+                        button7.setForeground(new Color(255, 255, 255));
+                        button8.setForeground(new Color(255, 255, 255));
+                        button9.setForeground(new Color(255, 255, 255));
+                        button0.setForeground(new Color(255, 255, 255));
                         break;
                     case "Light theme":
                         panel1.setBackground(new Color(220,220,220));
                         labelResult.setForeground(Color.BLACK);
+                        button1.setBackground(new Color(255, 111, 0));
+                        button2.setBackground(new Color(255, 111, 0));
+                        button3.setBackground(new Color(255, 111, 0));
+                        button4.setBackground(new Color(255, 111, 0));
+                        button5.setBackground(new Color(255, 111, 0));
+                        button6.setBackground(new Color(255, 111, 0));
+                        button7.setBackground(new Color(255, 111, 0));
+                        button8.setBackground(new Color(255, 111, 0));
+                        button9.setBackground(new Color(255, 111, 0));
+                        button0.setBackground(new Color(255, 111, 0));
+                        button1.setForeground(Color.BLACK);
+                        button2.setForeground(Color.BLACK);
+                        button3.setForeground(Color.BLACK);
+                        button4.setForeground(Color.BLACK);
+                        button5.setForeground(Color.BLACK);
+                        button6.setForeground(Color.BLACK);
+                        button7.setForeground(Color.BLACK);
+                        button8.setForeground(Color.BLACK);
+                        button9.setForeground(Color.BLACK);
+                        button0.setForeground(Color.BLACK);
                         break;
                     case "Dark theme":
                         panel1.setBackground(Color.DARK_GRAY);
                         labelResult.setForeground(Color.WHITE);
+                        button1.setBackground(new Color(255, 111, 0));
+                        button2.setBackground(new Color(255, 111, 0));
+                        button3.setBackground(new Color(255, 111, 0));
+                        button4.setBackground(new Color(255, 111, 0));
+                        button5.setBackground(new Color(255, 111, 0));
+                        button6.setBackground(new Color(255, 111, 0));
+                        button7.setBackground(new Color(255, 111, 0));
+                        button8.setBackground(new Color(255, 111, 0));
+                        button9.setBackground(new Color(255, 111, 0));
+                        button0.setBackground(new Color(255, 111, 0));
+                        button1.setForeground(new Color(255, 255, 255));
+                        button2.setForeground(new Color(255, 255, 255));
+                        button3.setForeground(new Color(255, 255, 255));
+                        button4.setForeground(new Color(255, 255, 255));
+                        button5.setForeground(new Color(255, 255, 255));
+                        button6.setForeground(new Color(255, 255, 255));
+                        button7.setForeground(new Color(255, 255, 255));
+                        button8.setForeground(new Color(255, 255, 255));
+                        button9.setForeground(new Color(255, 255, 255));
+                        button0.setForeground(new Color(255, 255, 255));
                         break;
                     default:
                         throw new IllegalStateException("Unexpected value: " + s);

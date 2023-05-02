@@ -33,7 +33,7 @@ public class GUI extends JFrame {
 
     public GUI() {
         super();
-        setSize(850, 550);
+        setSize(750, 650);
         setTitle("ORANGE CALCULATOR v0.1");
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -41,6 +41,7 @@ public class GUI extends JFrame {
         panel1.setBackground(new Color(255,165,0));
         panel2.setBackground(Color.WHITE);
         panel2.setSize(202,200);
+
         textField.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
                 char c = e.getKeyChar();

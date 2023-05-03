@@ -322,8 +322,7 @@
           <font name="JetBrains Mono ExtraBold" size="24"/>
           <hideActionText value="false"/>
           <horizontalAlignment value="0"/>
-          <icon value="enterButton.png"/>
-          <text value=""/>
+          <text value="="/>
         </properties>
       </component>
       <component id="880e9" class="javax.swing.JTextField" binding="textField">

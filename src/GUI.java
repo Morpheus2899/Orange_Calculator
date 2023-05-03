@@ -68,16 +68,16 @@ public class GUI extends JFrame {
                     case "Orange theme":
                         panel1.setBackground(new Color(255,165,0));
                         labelResult.setForeground(Color.BLACK);
-                        button1.setBackground(new Color(105, 107, 110));
-                        button2.setBackground(new Color(105, 107, 110));
-                        button3.setBackground(new Color(105, 107, 110));
-                        button4.setBackground(new Color(105, 107, 110));
-                        button5.setBackground(new Color(105, 107, 110));
-                        button6.setBackground(new Color(105, 107, 110));
-                        button7.setBackground(new Color(105, 107, 110));
-                        button8.setBackground(new Color(105, 107, 110));
-                        button9.setBackground(new Color(105, 107, 110));
-                        button0.setBackground(new Color(105, 107, 110));
+                        button1.setBackground(new Color(64, 64, 64));
+                        button2.setBackground(new Color(64, 64, 64));
+                        button3.setBackground(new Color(64, 64, 64));
+                        button4.setBackground(new Color(64, 64, 64));
+                        button5.setBackground(new Color(64, 64, 64));
+                        button6.setBackground(new Color(64, 64, 64));
+                        button7.setBackground(new Color(64, 64, 64));
+                        button8.setBackground(new Color(64, 64, 64));
+                        button9.setBackground(new Color(64, 64, 64));
+                        button0.setBackground(new Color(64, 64, 64));
                         button1.setForeground(new Color(255, 255, 255));
                         button2.setForeground(new Color(255, 255, 255));
                         button3.setForeground(new Color(255, 255, 255));

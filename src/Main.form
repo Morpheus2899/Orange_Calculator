@@ -17,7 +17,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -35,7 +35,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -53,7 +53,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -190,7 +190,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -208,7 +208,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -227,7 +227,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -245,7 +245,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -263,7 +263,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -281,7 +281,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -299,7 +299,7 @@
           </grid>
         </constraints>
         <properties>
-          <background color="-9868434"/>
+          <background color="-12566464"/>
           <enabled value="true"/>
           <font name="DejaVu Math TeX Gyre" size="30"/>
           <foreground color="-1"/>
@@ -322,7 +322,8 @@
           <font name="JetBrains Mono ExtraBold" size="24"/>
           <hideActionText value="false"/>
           <horizontalAlignment value="0"/>
-          <text value="="/>
+          <icon value="enterButton.png"/>
+          <text value=""/>
         </properties>
       </component>
       <component id="880e9" class="javax.swing.JTextField" binding="textField">

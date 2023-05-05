@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.util.prefs.Preferences;
 
 public class GUI extends JFrame {
     private JPanel panel1;
@@ -29,7 +30,8 @@ public class GUI extends JFrame {
     private JButton buttonEnter;
     private JLabel labelResult;
     private JButton buttonPoint;
-    JFrame errorPane;
+    private JFrame errorPane;
+    Preferences pref = Preferences.userRoot();
 
     public GUI() {
         super();
@@ -41,6 +43,86 @@ public class GUI extends JFrame {
         panel1.setBackground(new Color(255,165,0));
         panel2.setBackground(Color.WHITE);
         panel2.setSize(202,200);
+        String comboBoxValue = pref.get("comboBoxValue", "Dark theme");
+        switch (comboBoxValue) {
+            case "Orange theme":
+                panel1.setBackground(new Color(255,165,0));
+                labelResult.setForeground(Color.BLACK);
+                button1.setBackground(new Color(64, 64, 64));
+                button2.setBackground(new Color(64, 64, 64));
+                button3.setBackground(new Color(64, 64, 64));
+                button4.setBackground(new Color(64, 64, 64));
+                button5.setBackground(new Color(64, 64, 64));
+                button6.setBackground(new Color(64, 64, 64));
+                button7.setBackground(new Color(64, 64, 64));
+                button8.setBackground(new Color(64, 64, 64));
+                button9.setBackground(new Color(64, 64, 64));
+                button0.setBackground(new Color(64, 64, 64));
+                button1.setForeground(new Color(255, 255, 255));
+                button2.setForeground(new Color(255, 255, 255));
+                button3.setForeground(new Color(255, 255, 255));
+                button4.setForeground(new Color(255, 255, 255));
+                button5.setForeground(new Color(255, 255, 255));
+                button6.setForeground(new Color(255, 255, 255));
+                button7.setForeground(new Color(255, 255, 255));
+                button8.setForeground(new Color(255, 255, 255));
+                button9.setForeground(new Color(255, 255, 255));
+                button0.setForeground(new Color(255, 255, 255));
+                comboBox1.setSelectedIndex(0);
+                break;
+            case "Light theme":
+                panel1.setBackground(new Color(220,220,220));
+                labelResult.setForeground(Color.BLACK);
+                button1.setBackground(new Color(255, 111, 0));
+                button2.setBackground(new Color(255, 111, 0));
+                button3.setBackground(new Color(255, 111, 0));
+                button4.setBackground(new Color(255, 111, 0));
+                button5.setBackground(new Color(255, 111, 0));
+                button6.setBackground(new Color(255, 111, 0));
+                button7.setBackground(new Color(255, 111, 0));
+                button8.setBackground(new Color(255, 111, 0));
+                button9.setBackground(new Color(255, 111, 0));
+                button0.setBackground(new Color(255, 111, 0));
+                button1.setForeground(Color.BLACK);
+                button2.setForeground(Color.BLACK);
+                button3.setForeground(Color.BLACK);
+                button4.setForeground(Color.BLACK);
+                button5.setForeground(Color.BLACK);
+                button6.setForeground(Color.BLACK);
+                button7.setForeground(Color.BLACK);
+                button8.setForeground(Color.BLACK);
+                button9.setForeground(Color.BLACK);
+                button0.setForeground(Color.BLACK);
+                comboBox1.setSelectedIndex(1);
+                break;
+            case "Dark theme":
+                panel1.setBackground(Color.DARK_GRAY);
+                labelResult.setForeground(Color.WHITE);
+                button1.setBackground(new Color(255, 111, 0));
+                button2.setBackground(new Color(255, 111, 0));
+                button3.setBackground(new Color(255, 111, 0));
+                button4.setBackground(new Color(255, 111, 0));
+                button5.setBackground(new Color(255, 111, 0));
+                button6.setBackground(new Color(255, 111, 0));
+                button7.setBackground(new Color(255, 111, 0));
+                button8.setBackground(new Color(255, 111, 0));
+                button9.setBackground(new Color(255, 111, 0));
+                button0.setBackground(new Color(255, 111, 0));
+                button1.setForeground(new Color(255, 255, 255));
+                button2.setForeground(new Color(255, 255, 255));
+                button3.setForeground(new Color(255, 255, 255));
+                button4.setForeground(new Color(255, 255, 255));
+                button5.setForeground(new Color(255, 255, 255));
+                button6.setForeground(new Color(255, 255, 255));
+                button7.setForeground(new Color(255, 255, 255));
+                button8.setForeground(new Color(255, 255, 255));
+                button9.setForeground(new Color(255, 255, 255));
+                button0.setForeground(new Color(255, 255, 255));
+                comboBox1.setSelectedIndex(2);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + comboBoxValue);
+        }
 
         textField.addKeyListener(new KeyAdapter() {
             public void keyTyped(KeyEvent e) {
@@ -140,6 +222,7 @@ public class GUI extends JFrame {
                     default:
                         throw new IllegalStateException("Unexpected value: " + s);
                 }
+                pref.put("comboBoxValue", s);
             }
         });
 

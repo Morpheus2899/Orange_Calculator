@@ -30,7 +30,9 @@ public class GUI extends JFrame {
     private JButton buttonEnter;
     private JLabel labelResult;
     private JButton buttonPoint;
+    private JButton buttonInfo;
     private JFrame errorPane;
+    private JFrame infoPane;
     Preferences pref = Preferences.userRoot();
 
     public GUI() {
@@ -388,7 +390,7 @@ public class GUI extends JFrame {
             }
         });
 
-        buttonEnter.addActionListener(new ActionListener() {
+        /*buttonEnter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
@@ -428,6 +430,24 @@ public class GUI extends JFrame {
                     JOptionPane.showMessageDialog(errorPane, "You can only do binary operations (for now)",
                             "ERROR", JOptionPane.WARNING_MESSAGE);
                 }
+            }
+        });*/
+
+        buttonEnter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                int[] numbers = new int[40];
+                char[] operations = new char[39];
+
+            }
+        });
+
+        buttonInfo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                infoPane = new JFrame();
+                JOptionPane.showMessageDialog(infoPane, "\nA simple calculator\nAuthor: " +
+                        "Francesco Spreafico\n\n", "INFO", JOptionPane.INFORMATION_MESSAGE);
             }
         });
 
